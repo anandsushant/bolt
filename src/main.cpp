@@ -4,7 +4,6 @@
 
 int main() {
     UDPReceiver receiver(9000);
-    // receiver.start();
     StockPacket packet;
 
     while (true) {

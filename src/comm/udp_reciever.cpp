@@ -39,18 +39,3 @@ bool UDPReceiver::receive(StockPacket &packet) {
 
     return bytes_received == sizeof(StockPacket);
 }
-
-
-// void UDPReceiver::receiveLoop() {
-//     char buffer[1024];
-//     sockaddr_in cliaddr{};
-//     socklen_t len = sizeof(cliaddr);
-
-//     while (true) {
-//         ssize_t n = recvfrom(sockfd, buffer, sizeof(buffer), 0, (struct sockaddr*)&cliaddr, &len);
-
-//         if (n > 0) {
-//             std::cout << "Received " << n << " bytes\n";
-//         }
-//     }
-// }
