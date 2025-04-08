@@ -1,5 +1,5 @@
 build/
 /CMakeFiles/
 /CMakeCache.txt
-/Makefile
-/*.o
+/Makefile/
+**/*.o
