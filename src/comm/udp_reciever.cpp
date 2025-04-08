@@ -5,7 +5,7 @@
 UDPReceiver::UDPReceiver(int port) {
     sockfd = socket(AF_INET, SOCK_DGRAM, 0);
     if (sockfd < 0){
-        perror("socket creation failed");
+        perror("Socket creation failed");
         exit(EXIT_FAILURE);
     }
 
@@ -15,7 +15,7 @@ UDPReceiver::UDPReceiver(int port) {
     server_addr.sin_port = htons(port);
 
     if (bind(sockfd, (struct sockaddr*)&server_addr, sizeof(server_addr)) < 0) {
-        perror("bind");
+        perror("Bind failed.");
         close(sockfd);
         exit(EXIT_FAILURE);
     }
