@@ -1,4 +1,0 @@
-/home/sushantanand/project/blitz/blitz/build/CMakeFiles/blitz.dir
-/home/sushantanand/project/blitz/blitz/build/CMakeFiles/packet_sender.dir
-/home/sushantanand/project/blitz/blitz/build/CMakeFiles/edit_cache.dir
-/home/sushantanand/project/blitz/blitz/build/CMakeFiles/rebuild_cache.dir

@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/blitz.dir/src/comm/udp_reciever.cpp.o CMakeFiles/blitz.dir/src/engine/packet_loader.cpp.o CMakeFiles/blitz.dir/src/main.cpp.o -o blitz 
