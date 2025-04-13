@@ -1,6 +1,6 @@
 // tools/packet_sender.cpp
 
-#include "inc_blitz/stock_packet.h"
+#include "inc_utils/stock_packet.h"
 
 int main() {
 

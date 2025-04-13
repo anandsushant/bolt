@@ -1,29 +1,29 @@
-// include/inc_blitz.h
+// include/inc_blitz/udp_receiver.h
+#ifndef UDP_RECEIVER_H
+#define UDP_RECEIVER_H
 
-#pragma once
 #include <string>
 #include <iostream>
 #include <cstring>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <unistd.h>
-
-struct StockPacket {
-    char symbol[8];
-    double price;
-    int32_t volume;
-    uint64_t timestamp;
-};
+#include <atomic>
+#include "inc_blitz/packet_handler.h"
 
 class UDPReceiver {
     public:
-        UDPReceiver(int port);
+        UDPReceiver(int port, PacketHandler& handler);
         ~UDPReceiver();
-        bool receive(StockPacket &packet);
-        // void start();
+        void start();
+        // bool receive(StockPacket &packet);
     private:
-        int sockfd;
+        int sockfd_;
         // int port;
-        sockaddr_in server_addr;
+        sockaddr_in server_addr_;
         // void receiveLoop();
+        std::atomic<bool> running_;
+        PacketHandler& packet_handler_;
 };
+
+#endif // UDP_RECEIVER_H

@@ -13,7 +13,7 @@
 #pragma pack(push, 1)
 
 struct StockPacket {
-    char symbol[8];
+    char symbol[16];
     double price;
     int32_t volume;
     uint64_t timestamp;
