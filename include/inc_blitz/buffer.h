@@ -8,14 +8,13 @@ template <typename T>
 class Buffer {
     public:
         Buffer(size_t capacity) : buffer_(capacity), c_capacity_(capacity), head_(0), tail_(0) {}
-        // buffer_(capacity) works same as buffer_(std::vector<T>(capacity)) but without extra copying
 
         bool push(const T& data) {
             size_t head = head_.load(std::memory_order_relaxed);
             size_t next_head = (head + 1) % c_capacity_;
 
             if (next_head == tail_.load(std::memory_order_acquire)) {
-                return false; // buffer is at capacity
+                return false; // buffer is full (at capacity)
             }
             buffer_[head] = data;
             head_.store(next_head, std::memory_order_release);
