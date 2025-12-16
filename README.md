@@ -1,2 +1,2 @@
-# blitz
-A lightweight trading system simulator focused on high-frequency data reception and low-latency data processing using C++.
+# bolt
+A lightweight trading system focused on low-latency data processing, data reception using C++.
