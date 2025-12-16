@@ -30,7 +30,9 @@ class Buffer {
             tail_.store((tail + 1) % c_capacity_, std::memory_order_release);
             return true;
         }
-
+        int size() {
+            return tail_ - head_;
+        }
     private:
     std::vector<T> buffer_;
     const size_t c_capacity_;
